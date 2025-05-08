@@ -6,11 +6,14 @@ function App() {
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
-		console.log("increase");
+		console.log("component mounted");
+	}, []);
+
+	useEffect(() => {
+		console.log("count changed", count);
 	}, [count]);
 
 	const MyVariable = ({ text }) => {
-		const myVariable = "Hello World!";
 		return (
 			<div>
 				<button onClick={() => setCount(count + 1)}>Increment</button>
@@ -20,7 +23,6 @@ function App() {
 	};
 
 	const Nav = ({ text }) => {
-		const myVariable = "Hello World!";
 		return (
 			<li>
 				<a href="#">Filthy Prank</a>
